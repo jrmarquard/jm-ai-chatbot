@@ -1,6 +1,8 @@
 # jm-ai-chatbot
 
-Chatbot for me to use for local development.
+A simple demo of a 2x locally hosted chatbots using Next, Vercel, and Ollama.
+
+For fun and a crashcourse through new libraries.
 
 ## Build & Run
 
@@ -26,9 +28,21 @@ Chatbot for me to use for local development.
 1. Visit http://localhost:3001 (or whatever local url is displayed) to use the app
 1. Done
 
-**Step 2: Add Image Input**
+**Step 2: Photo Review App**
 
-1. 
+1. install llava-llama3. `ollama run llava-llama3` ([read more](https://ollama.com/library/llava-llama3))
+1. Create next app (as above)
+1. Additionally install React Dropzone. `react-dropzone`
+1. Update `page.tsx` to receive images
+1. Create `/api/chat/route.ts` to stream response from `llava-llama3`.
+
+**Note**: Had to set `allowEmptySubmit=true` to get `handleSubmit()` to send POST to API. No idea why.
+
+`llava-llama3`: A LLaVA model fine-tuned from Llama 3 Instruct.
+
+![](photo-review-demo.jpg)
+
+__Example of the photo review chat bot in action__
 
 
 ## Command reference
@@ -58,4 +72,5 @@ Can become bloated, however you don't have arbitrary class names that can be con
 **What is pnpm dlx?**
 
 > Fetches a package from the registry without installing it as a dependency, hotloads it, and runs whatever default command binary it exposes. — Source: [pnpm dlx docs](https://pnpm.io/cli/dlx)
+
 
